@@ -1,11 +1,11 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<string.h>
 void main()
 {
 char exp1[20],dtype[20],t;
 int i,len,j=0,k,flag=0;
-clrscr();
+//clrscr();
 printf("enter the expression");
 scanf("%s",exp1);
 len=strlen(exp1);
@@ -34,5 +34,5 @@ break;
 }
 if(flag==0)
 printf("Type of the given expression is %c",t);
-getch();
+//getch();
 }

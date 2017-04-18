@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<alloc.h>
 #include<string.h>
 struct Listnode
@@ -56,7 +56,7 @@ char *substring,*token;
 int i=0,block=0,block1=0;
 int j=0;
 fpr= fopen("input.txt","r");
-clrscr();
+//clrscr();
 while((c=getc(fpr))!=EOF)
 {
 if(c!='\n')
@@ -227,5 +227,5 @@ cur=cur->next;
 cur=last;
 block= cur->block;
 printf("\t\tBlock%d--------->NULL",block);
-getch();
+//getch();
 }

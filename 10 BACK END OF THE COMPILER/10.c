@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<ctype.h>
 #include<stdlib.h>
 void main()
@@ -7,14 +7,14 @@ void main()
 int i=2,j=0,k=2,k1=0;
 char ip[10],kk[10];
 FILE* fp;
-clrscr();
+//clrscr();
 printf("\nEnter the filename of the intermediatecode");
 scanf("%s",&kk);
 fp=fopen(kk,"r");
 if(fp==NULL){
 printf("\nError in Opening the file");
-getch();
-}clrscr();
+//getch();
+}//clrscr();
 while(!feof(fp))
 {
 fscanf(fp,"%s\n",ip);
@@ -39,6 +39,6 @@ printf("%c,%c\n",ip[i],ip[i+2]);
 j++;k1=2;k=0
 ;}
 printf("\n-------------------------------\n");
-getch();
+//getch();
 fclose(fp);
 }

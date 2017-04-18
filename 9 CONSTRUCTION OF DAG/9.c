@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<string.h>
 int exist(char);
 int find(char);
@@ -21,7 +21,7 @@ void main()
 {
 char exp[50];
 int exp_len,i,opcount=0;
-clrscr();
+//clrscr();
 printf("Enter simple assignment statement\n");
 scanf("%s",exp);
 exp_len=strlen(exp);
@@ -97,7 +97,7 @@ printf("Entry\tOperator\tLeft\tRight\n");
 printf("-----------------------------------------------\n");
 for(i=0;i<ni;i++)
 printf("%d\t%c\t\t%d\t\t%d\n",Internal[i].ind,Internal[i].c,Internal[i].left,Internal[i].right);
-getch();
+//getch();
 }
 
 int exist(char f)

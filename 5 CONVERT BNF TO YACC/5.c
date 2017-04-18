@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 int priority(char x);
 struct table
 {
@@ -9,7 +9,7 @@ void main()
 {
 char infix[10],postfix[10],stack[10];
 int in,i,j=-1,k=0,sp=0,t=48;
-clrscr();
+//clrscr();
 stack[0]=' ';
 printf("enter the expression");
 scanf("%s",&infix);
@@ -51,7 +51,7 @@ t++;
 }
 for(k=0;k<=j;k++)
 printf("\n%c%c%c%c",st[k].op3,st[k].op2,st[k].op1,st[k].op);
-getch();
+//getch();
 }
 int priority(char x)
 {

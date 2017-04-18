@@ -1,11 +1,11 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<ctype.h>
 #include<string.h>
 #include<stdlib.h>
 #define SIZE 128
 #define NONE -1
-#define EOS ‘\0’
+#define EOS â€˜\0â€™
 #define NUM 256
 #define KEYWORD 257
 #define PAREN 258
@@ -25,9 +25,10 @@ struct entry
 char *lexptr;
 int token;
 }symtable[100];
-struct entry keywords[]={“if”,KEYWORD,”else”,KEYWORD,”for”,KEYWORD,“int”,KEYWORD,”float”,KEYWORD,”double”,KEYWORD,”char”,KEYWORD,“struct”,KEYWORD,”return”,KEYWORD,0,0};
+structÂ entryÂ keywords[]=  
+{â€œifâ€,KEYWORD,â€elseâ€,KEYWORD,â€forâ€,KEYWORD,â€œintâ€,KEYWORD,â€floatâ€,KEYWORD,â€doubleâ€,KEYWORD,â€charâ€,KEYWORD,â€œstructâ€,KEYWORD,â€returnâ€,KEYWORD,0,0};
 void Error_Message(char *m)
-{fprint(stderr,”line %d: %s”,lineno,m);
+{fprint(stderr,â€line %d: %sâ€,lineno,m);
 exit(1);
 }
 int look_up(char s[])
@@ -42,9 +43,9 @@ int insert(chars[],int tok)
 {int len;
 len=strlen(s);
 if(lastentry+1>=MAX)
-Error_Message(“Symbol Table is Full”);
+Error_Message(â€œSymbol Table is Fullâ€);
 if(lastchar+len+1>=MAX)
-Error_Message(“Lexemes Array is Full”);
+Error_Message(â€œLexemes Array is Fullâ€);
 lastentry++;
 symtable[lastentry].token=tok;
 symtable[lastentry].lexptr=&lexemes[lastcher+1];
@@ -64,19 +65,19 @@ int val,i=0;
 while(1)
 {
 t=getchar();
-if(t == ’’ || t==’\t’);
-else if(t==’\n’)
+if(t == â€™â€™ || t==â€™\tâ€™);
+else if(t==â€™\nâ€™)
 lineno++;
-else if(t == ’(‘ || t == ‘)’)
+else if(t == â€™(â€˜ || t == â€˜)â€™)
 return PAREN;
-else if(t==‘<’ ||t==‘>’ ||t==‘<=’ ||t==‘>=’ ||t == ‘!=’)
+else if(t==â€˜<â€™ ||t==â€˜>â€™ ||t==â€˜<=â€™ ||t==â€˜>=â€™ ||t == â€˜!=â€™)
 return REL_OP;
-else if(t == ’=’)
+else if(t == â€™=â€™)
 return ASSIGN;
 else if(isdigit(t))
 {
 ungetc(t,stdin);
-scanf(“%d”,&tokenval);
+scanf(â€œ%dâ€,&tokenval);
 return NUM;
 }
 else if(isalpha(t))
@@ -86,7 +87,7 @@ while(isalnum(t))
 t=getchar();
 i++;
 if(i>=SIZE)
-Error_Message(“compiler error”);
+Error_Message(â€œcompiler errorâ€);
 }
 buffer[i]=EOS;
 if(t!=EOF)
@@ -109,28 +110,28 @@ void main()
 {
 int lookahead;
 char ans;
-clrscr();
-printf(“\n]t]t Program for Lexical Analysis \n”);
+//clrscr();
+printf(â€œ\n]t]t Program for Lexical Analysis \nâ€);
 Initialize();
-printf(“\n Enter the expression and put ; at the end”);
-printf(“\n Press Ctrl + Z to terminate... \n”);
+printf(â€œ\n Enter the expression and put ; at the endâ€);
+printf(â€œ\n Press Ctrl + Z to terminate... \nâ€);
 lookahead=lexer();
 while(lookahead!=DONE)
 {
 if(lookahead==NUM)
-printf(“\n Number: %d”,tokenval);
-if(lookahead==’+’|| lookahead==’-’|| lookahead==’*’||lookahead==’/’)
-printf(“\n Operator”);
+printf(â€œ\n Number: %dâ€,tokenval);
+if(lookahead==â€™+â€™|| lookahead==â€™-â€™|| lookahead==â€™*â€™||lookahead==â€™/â€™)
+printf(â€œ\n Operatorâ€);
 if(lookahead==PAREN)
-printf(“\n Parentesis”);
+printf(â€œ\n Parentesisâ€);
 if(lookahead==ID)
-printf(“\n Identifier: %s“,symtable[tokenval].lexptr);
+printf(â€œ\n Identifier: %sâ€œ,symtable[tokenval].lexptr);
 if(lookahead==KEYWORD)
-printf(“\n Keyword);
+printf(â€œ\n Keyword);
 if(lookahead==ASSIGN)
-printf(“\n Assignment Operator”);
+printf(â€œ\n Assignment Operatorâ€);
 if(lookahead==REL_OP)
-printf(“\n Relataional Operator”);
+printf(â€œ\n Relataional Operatorâ€);
 lookahead=lexer();
 }
 }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+//#include <conio.h>
 #include <stdlib.h>
 #include <string.h>
 struct table
@@ -20,7 +20,7 @@ int ch,result=0;
 char v[10];
 do
 {
-clrscr();
+//clrscr();
 printf("\n1. CREATE\n2. INSERT\n3. MODIFY\n4. SEARCH\n5. DISPLAY\n6.EXIT ");
 printf("\n Enter your choice : ");
 scanf("%d",&ch);
@@ -36,14 +36,14 @@ case 4:               printf("\n Enter the variable to be searched for : ");
 printf("\n The variable doest not belong to the table.");
 else
 printf("\nVariable=%s\tValue=%d\tLocation=%d",tb1[result].var,tb1[result].value,result);
-getch();
+//getch();
 break;
 case 5:            display();break;
 case 6:            exit(1);
 }
 }
 while(ch!=6);
-getch();
+//getch();
 }
 void create()
 {
@@ -113,14 +113,12 @@ if(result==0)
  printf("\n The variable doest not belong to the table.");
 else
 {
-printf("\n The current value of the variable %s is %d.\n Enter the new variableand its
-value",tb1[result].var,tb1[result].value);
+printf("\n The current value of the variable %s is %d.\n Enter the new variableand its value",tb1[result].var,tb1[result].value);
 scanf("%s%d",tb1[result].var,&tb1[result].value);
 check:
 if(tb1[i].var[0]>='0'&&tb1[i].var[0]<='9')
 {
-printf("\nThe variable should not start with an alphabet.\nEnter the Correct variable
-name :");
+printf("\nThe variable should not start with an alphabet.\nEnter the Correct variable name :");
 scanf("%s%d",tb1[i].var,&tb1[i].value);
 goto check;
 }
@@ -147,5 +145,5 @@ void display()
 printf("\nVARIABLE\tVALUE\n");
 for(i=1;i<=n;i++)
 printf("\n%s\t\t%d",tb1[i].var,tb1[i].value);
-getch();
+//getch();
 }
